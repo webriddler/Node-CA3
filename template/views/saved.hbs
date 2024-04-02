@@ -1,0 +1,47 @@
+{{>header}}
+<div class="row" style="margin-top: 3rem;">
+    <div class="col-xs-12 col-lg-10 col-xl-8">
+        <div class="row" style="margin-top: 3rem;">
+            <div class="col-xs-12 col-lg-9">
+                <table class="table table-striped">
+                    <tr>
+                        <th>Website</th>
+                        <th>Username</th>
+                        <th>Password</th>
+                        <th>Expiry</th>
+                        <th>Date created</th>
+                        <th>Action</th>
+                    </tr>
+                    {{#each data as |item|}}
+                    <tr>
+                        <td>{{item.site_name}}</td>
+                        <td>{{item.username}}</td>
+                        <td>{{item.password}}</td>
+                        <td>
+                            {{#if item.expired}}
+                                {{item.validity}}
+                            {{else}}
+                                NA
+                            {{/if}}
+                        </td>
+                        <td>{{item.created_on}}</td>
+                        <td>
+                            <button type="button" onclick="gotoDelete('{{item.site_name}}')" class="btn btn-sm btn-danger">Delete</button>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </table>
+
+            </div>
+
+            <div class="col-xs-12 col-lg-3">
+                <div style="margin-left: 3rem;">
+                    {{>action4}}
+                    {{>action2}}
+                    {{>action3}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>           
+{{>footer}}

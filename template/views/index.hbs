@@ -1,0 +1,55 @@
+{{>header}}
+<div class="row" style="margin-top: 3rem;">
+    <div class="col-xs-12 col-lg-10 col-xl-8">
+        <div class="row" style="margin-top: 3rem;">
+            <div class="col-xs-12 col-lg-9">
+                <form class="form-horizontal" action="/savePassword" method="POST">
+                    <div class="form-group">
+                        <label for="websiteName" class="col-xs-4 control-label">Website Name</label>
+                        <div class="col-xs-8">
+                            <input type="text" required class="form-control" id="websiteName" name="websiteName" placeholder="Website e.g Google">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="emailUsername" class="col-xs-4 control-label">Email / Username</label>
+                        <div class="col-xs-8">
+                            <input type="text" required class="form-control" id="emailUsername" name="emailUsername" placeholder="Provide email / username">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="col-xs-4 control-label">Password</label>
+                        <div class="col-xs-4">
+                            <input type="password" required class="form-control" name="password" id="password" placeholder="Type password / Generate">
+                        </div>
+                        <div class="col-xs-1">
+                            <button type="button" onclick="toggleVisibility()" class="btn btn-default" > <span id="eyePass" class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></button>
+                        </div>
+                        <div class="col-xs-3">
+                            <button type="button" onclick="generatePassword()" class="btn btn-default"> <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span> Auto Generate</button>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="expiry" class="col-xs-4 control-label">Expiry (optional)</label>
+                        <div class="col-xs-8">
+                            <input type="date" class="form-control" id="expiry" name="expiry" placeholder="Expiry">
+                        </div>
+                    </div>
+                    <div class="form-group" style="margin-top: 3rem;">
+                        <div class="col-xs-offset-2 col-xs-10">
+                            <button type="submit" class="btn btn-primary">Save your password</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="col-xs-12 col-lg-3">
+                <div style="margin-left: 3rem;">
+                    {{>action1}}
+                    {{>action2}}
+                    {{>action3}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>       
+{{>footer}}
