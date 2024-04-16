@@ -56,7 +56,7 @@ app.get("/search", (req, res) => {
   res.render("search", {
     title: "Search Passwords",
     description:
-      "Provide webiste name, associated with your saved password accounts.",
+      "Provide website name, associated with your saved password accounts.",
     name: "Dev Anand",
     message: message,
   });
